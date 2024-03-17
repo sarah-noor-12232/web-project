@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental - Sign Up</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="log_style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Urban Drive
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Featured Cars</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+  <!-- Your sign-up HTML code here -->
+  <div class="wrapper">
+    <!-- Sign-up section with the provided CSS -->
+    <div class="card-switch">
+        <label class="switch">
+            <input class="toggle" type="checkbox">
+            <span class="slider"></span>
+            <span class="card-side"></span>
+            <div class="flip-card__inner">
+                <div class="flip-card__front">
+                    <div class="title">Log in</div>
+                    <form action="" class="flip-card__form">
+                        <input type="email" placeholder="Email" name="email" class="flip-card__input">
+                        <input type="password" placeholder="Password" name="password" class="flip-card__input">
+                        <a href="updatedCat.html"><button class="flip-card__btn">Let's go!</button></a>
+                    </form>
+                </div>
+                <div class="flip-card__back">
+                    <div class="title">Sign up</div>
+                    <form action="" class="flip-card__form">
+                        <input type="name" placeholder="Name" class="flip-card__input">
+                        <input type="email" placeholder="Email" name="email" class="flip-card__input">
+                        <input type="password" placeholder="Password" name="password" class="flip-card__input">
+                        <div class="form-group">
+                            <label class="mr-3" style="color: #fff;">I am a :</label> <!-- White text color -->
+                            <label class="radio-inline mr-3">
+                                <input type="radio" name="userType" value="renter" checked> Renter
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="userType" value="vendor"> Vendor
+                            </label>
+                        </div>
+                        <button class="flip-card__btn">Confirm!</button>
+                    </form>
+                </div>
+            </div>
+        </label>
+    </div>   
+  </div>
+
+  <!-- Bootstrap JS (Optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
