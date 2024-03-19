@@ -1,11 +1,19 @@
 body, html {
     height: 100%;
     margin: 0;
-    
-  }
-  .wrapper {
+}
+
+label.mr-3 {
+    color: #111; /* Change this to your desired font color */
+}
+
+label {
+    color: #111; /* Change this to your desired font color */
+}
+
+.wrapper {
     --input-focus: #2d8cf0;
-    --font-color: #fefefe;
+    --font-color: #111;
     --font-color-sub: #7e7e7e;
     --bg-color: #111;
     --bg-color-alt: #7e7e7e;
@@ -17,107 +25,103 @@ body, html {
     background-color: #25292e; /* Dark grey background color */
     /* justify-content: flex-start; Adjusted alignment */
     padding-top: -10px;
-    background: repeating-linear-gradient(
-      -45deg,
-      #25292e,
-      #0f0f0f 10px,
-      #25292e 10px,
-      #0f0f0f 20px
-    )
-    #25292e;
-  background-blend-mode: screen;
-    
-
-  }
-  /* switch card */
-  .switch {
+    background: repeating-linear-gradient( -45deg, #25292e, #0f0f0f 10px, #25292e 10px, #0f0f0f 20px ) #25292e;
+    background-blend-mode: screen;
+}
+/* switch card */
+.switch {
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Adjusted alignment */
     gap: 30px;
     position: relative;
     margin-left: 20px; /* Adjusted margin */
-  }
-  .card-side::before {
+    --input-focus: #2d8cf0;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    --input-out-of-focus: #ccc;
+    width: 70px;
+    height: 36px;
+    transform: translateX(calc(50% - 10px));
+}
+
+.toggle {
+    opacity: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
     position: absolute;
-    content: 'Log In';
+    cursor: pointer;
+    top: -260px;
+    left: -60px;
+    right: 15px;
+    bottom: 260px;
+    background-color: var(--input-out-of-focus);
+    transition: 0.3s;
+}
+
+    .slider:before {
+        content: "Sign Up";
+        box-sizing: border-box;
+        height: 30px;
+        width: 80px;
+        position: absolute;
+        left: 0px;
+        bottom: 1px;
+        border: 2px solid var(--main-color);
+        border-radius: 100px;
+        background-color: var(--bg-color);
+        color: var(--main-color);
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 25px;
+        transition: 0.3s;
+    }
+
+.toggle:checked + .slider {
+    background-color: var(--input-focus);
+    transform: translateX(-32px);
+}
+
+    .toggle:checked + .slider:before {
+        content: "Log In";
+        transform: translateX(32px);
+    }
+
+.card-side::before {
+    position: absolute;
+    /* content: 'Log In'; */
     left: 20px;
     top: -110px;
     width: 100px;
     text-decoration: underline;
     color: var(--font-color);
     font-weight: 600;
-  }
-  
-  .card-side::after {
+}
+
+.card-side::after {
     position: absolute;
-    content: 'Sign up';
+    /* content: 'Sign up'; */
     right: -25px;
     top: -110px;
     width: 100px;
     text-decoration: none;
     color: var(--font-color);
     font-weight: 600;
-  }
-  .toggle {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    margin-top: -120px;
-    
-    /* appearance: none; /* Remove default appearance */
-    /*-webkit-appearance: none; /* Remove default appearance for WebKit */
-    /*-moz-appearance: none; Remove default appearance for Firefox */
-  }
-  
-  .slider {
-    position: relative;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    cursor: pointer;
-    background-color: var(--bg-color);
-    transition: 0.3s;
-    margin-left: 120px;
-  }
-  
-  .slider:before {
-    box-sizing: border-box;
-    position: absolute;
-    content: '';
-    height: 20px;
-    width: 20px;
-    border: 2px solid var(--main-color);
-    border-radius: 5px;
-    /* left: -2px; */
-    bottom: 2px;
-    background-color: var(--bg-color);
-    box-shadow: 0 3px 0 var(--main-color);
-    transition: 0.3s;
-    
-  }
-  
-  
-  .toggle:checked + .slider {
-    background-color: var(--input-focus);
-  }
-  
-  .toggle:checked + .slider:before {
-    transform: translateX(30px);
-  }
-  
-  .toggle:checked ~ .card-side:before {
-    text-decoration: none;
-  }
-  
-  .toggle:checked ~ .card-side:after {
-    text-decoration: underline;
-  }
-  
-  
-  /* card */ 
-  .flip-card__inner {
+}
+
+/* Other CSS styles... */
+
+
+
+/* card */
+.flip-card__inner {
     width: 300px;
     height: 350px;
     position: relative;
@@ -126,18 +130,23 @@ body, html {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    margin-top: -50px; /* Adjusted margin */
-  }
-  
-  .toggle:checked ~ .flip-card__inner {
+    margin: 0 auto; /* Center horizontally */
+    bottom: 800%; /* Move down by half of its height */
+    right: 250%;
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    z-index: 1;
+}
+
+
+.toggle:checked ~ .flip-card__inner {
     transform: rotateY(180deg);
-  }
-  
-  .toggle:checked ~ .flip-card__front {
+}
+
+.toggle:checked ~ .flip-card__front {
     box-shadow: var(--main-color);
-  }
-  
-  .flip-card__front, .flip-card__back {
+}
+
+.flip-card__front, .flip-card__back {
     padding: 20px;
     position: absolute;
     display: flex;
@@ -149,31 +158,31 @@ body, html {
     gap: 20px;
     border-radius: 5px;
     border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
+    box-shadow: 4px 4px var(--input-focus);
     color: #fff; /* White text color */
-  }
-  
-  .flip-card__back {
+}
+
+.flip-card__back {
     width: 100%;
     transform: rotateY(180deg);
-  }
-  
-  .flip-card__form {
+}
+
+.flip-card__form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-  }
-  
-  .title {
+}
+
+.title {
     margin: 20px 0;
     font-size: 25px;
     font-weight: 900;
     text-align: center;
     color: var(--main-color);
-  }
-  
-  .flip-card__input {
+}
+
+.flip-card__input {
     width: 250px;
     height: 40px;
     border-radius: 5px;
@@ -185,23 +194,23 @@ body, html {
     color: var(--font-color);
     padding: 5px 10px;
     outline: none;
-  }
-  
-  .flip-card__input::placeholder {
-    color: var(--font-color-sub);
-    opacity: 0.8;
-  }
-  
-  .flip-card__input:focus {
-    border: 2px solid var(--input-focus);
-  }
-  
-  .flip-card__btn:active, .button-confirm:active {
+}
+
+    .flip-card__input::placeholder {
+        color: var(--font-color-sub);
+        opacity: 0.8;
+    }
+
+    .flip-card__input:focus {
+        border: 2px solid var(--input-focus);
+    }
+
+.flip-card__btn:active, .button-confirm:active {
     box-shadow: 0px 0px var(--font-color-sub);
     transform: translate(3px, 3px);
-  }
-  
-  .flip-card__btn {
+}
+
+.flip-card__btn {
     margin: 20px 0;
     width: 120px;
     height: 40px;
@@ -213,5 +222,4 @@ body, html {
     font-weight: 600;
     color: var(--font-color);
     cursor: pointer;
-  } 
-  
+}
