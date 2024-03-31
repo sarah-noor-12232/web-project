@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Site</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index-style.css">
+  <!-- Slow Zoom -->
+  <script>
+    var zoomLevel = 110; // Initial zoom level
+    var zoomDirection = 0.1; // Initial zoom direction (1 for zoom in, -1 for zoom out)
+    var zoomInterval = setInterval(zoom, 100); // Zoom interval in milliseconds
+
+    function zoom() {
+      // Increase or decrease the zoom level
+      zoomLevel += zoomDirection;
+
+      // Check if zoom level reaches the maximum or minimum value
+      if (zoomLevel >= 120 || zoomLevel <= 100) {
+        zoomDirection *= -1; // Reverse the zoom direction
+      }
+
+      // Calculate the center point of the page
+      var offsetX = ((window.innerWidth * zoomLevel / 100) - window.innerWidth) / -2;
+      var offsetY = ((window.innerHeight * zoomLevel / 100) - window.innerHeight) / -2;
+
+      // Apply the zoom level to the background image centered at the page
+      var background = document.getElementById('background');
+      background.style.backgroundSize = zoomLevel + "%";
+      background.style.backgroundPosition = offsetX + "px " + offsetY + "px";
+    }
+  </script>
+  
+</head>
+
+<body>
+  <div id="background"></div>
+  <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100vh;">
+    <header>Welcome to our Car Rental Site</header>
+    <div style="padding-top: 20px;">
+      <button class="btn btn-primary next_btn" style="font-size: 1.5em;" onclick="window.location.href='login_signup.html'">Login/Signup</button>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
