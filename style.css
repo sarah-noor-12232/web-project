@@ -1,5 +1,6 @@
 body {
-    background-color: #eff1eb; /* Refined light gray background for a sleek look */
+    background: repeating-linear-gradient( -45deg, #25292e, #0f0f0f 10px, #25292e 10px, #0f0f0f 20px ) #25292e;
+    background-blend-mode: screen;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
 }
 
@@ -91,3 +92,277 @@ body {
     padding-left: 5%;
     padding-right: 5%
   }
+
+
+  .search-container1 {
+    position: relative;
+    /* background: linear-gradient(135deg, rgb(61, 66, 75) 0%, rgb(126, 139, 154) 100%);
+    border-radius: 1000px;
+    padding: 10px;
+    place-content: center;
+    z-index: 0; */
+    max-width: 300px;
+    margin: 15px 280px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between; /* Align items with space between */
+    align-items: center;
+    
+  }
+  
+  .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+  }
+  
+  .input {
+    font-family: "Montserrat", sans-serif;
+    width: 700px;
+    height: 45px;
+    padding-left: 2.5rem;
+    box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+    border: 0;
+    border-radius: 12px;
+    background-color: #232121;
+    outline: none;
+    color: #a3ceff;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+    cursor: text;
+    z-index: 0;
+  }
+  
+  .input::placeholder {
+    color: #a3ceff;
+  }
+  
+  .input:hover {
+    box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+  }
+  
+  .input:active {
+    transform: scale(0.95);
+  }
+  
+  .input:focus {
+    box-shadow: 0 0 0 2.5px #2f303d;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    fill: #a3ceff;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  
+  .wrapper {
+    --input-focus: #2d8cf0;
+    --font-color: #111;
+    --font-color-sub: #7e7e7e;
+    --bg-color: #111;
+    --bg-color-alt: #7e7e7e;
+    --main-color: #fefefe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #25292e; /* Dark grey background color */
+    /* justify-content: flex-start; Adjusted alignment */
+    padding-top: -10px;
+    background: repeating-linear-gradient( -45deg, #25292e, #0f0f0f 10px, #25292e 10px, #0f0f0f 20px ) #25292e;
+    background-blend-mode: screen;
+}
+
+  .input::placeholder {
+    /* Change the size of the placeholder text */
+    
+    font-size: 15px; /* Example font size */
+    /* Change the color of the placeholder text */
+    color: #bbd2ed; /* Example color */
+  }
+  
+
+.paste-button {
+  position: absolute;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 530px;
+  margin-top: -63px;
+}
+
+.date-button {
+    position: absolute;
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 730px;
+    margin-top: -59px;
+    
+  }
+
+.button {
+  background-color: #232121;
+  color: #a3ceff;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+  
+}
+
+.dropdown-content {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  z-index: 1;
+  min-width: 200px;
+  background-color: #232121;
+  border: 2px solid #a3ceff;
+  border-radius: 0px 15px 15px 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  max-height: 120px; /* Limit the height of the dropdown */
+  overflow-y: auto;
+}
+
+.dropdown-content a {
+  color: #a3ceff;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.1s;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #a3ceff;
+  color: #212121;
+}
+
+.dropdown-content a:focus {
+  background-color: #232121;
+  color: #a3ceff;
+}
+
+.dropdown-content #top:hover {
+  border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+  border-radius: 0px 0px 13px 13px;
+}
+
+.paste-button:hover button {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+}
+
+
+.date-button:hover button {
+    border-radius: 15px 15px 0px 0px;
+  }
+  
+  .date-button:hover .dropdown-content {
+    display: block;
+  }
+
+.loc-container {
+    position: relative;
+}
+
+
+.datepicker-dropdown {
+    font-size: 14px;
+    background-color: #232121; /* Inverted background color */
+    border: 1px solid #495057; /* Inverted border color */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    color: #a3ceff; /* Inverted text color */
+}
+
+.datepicker-dropdown table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.datepicker-dropdown th,
+.datepicker-dropdown td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #495057; /* Inverted border color */
+}
+
+.datepicker-dropdown th {
+    background-color: #495057; /* Inverted background color */
+    font-weight: bold;
+}
+
+.datepicker-dropdown td {
+    cursor: pointer;
+}
+
+.datepicker-dropdown td.disabled {
+    color: #6c757d;
+    cursor: default;
+}
+
+.datepicker-dropdown td.today {
+    background-color: #28a745; /* Inverted background color */
+    color: #a3ceff;
+    font-weight: bold;
+}
+
+.datepicker-dropdown td.active {
+    background-color: #a3ceff;
+}
+
+.datepicker-dropdown td.selected {
+    background-color: #28a745; /* Inverted background color */
+    color: #a3ceff;
+    font-weight: bold;
+}
+
+.datepicker-dropdown .datepicker-switch {
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.date-button input.form-control {
+    background-color: #232121; /* Background color for the input field */
+    border: 1px solid #232121; /* Border color for the input field */
+    color: #fff; /* Text color for the input field */
+    border-radius: 12px;
+    height: 45px;
+    width: 245px;
+    margin-top: -5px;
+    font-weight: 550;
+    text-align: center;
+}
+
+.date-button input.form-control::placeholder {
+    color: #a3ceff; /* Placeholder text color */
+}
+
+
+.start-date {
+    position: absolute;
+    margin-left: 720px;
+    margin-top: -58px;
+}
+
+.end-date {
+    position: absolute;
+    margin-left: 980px;
+    margin-top: -58px;
+}
