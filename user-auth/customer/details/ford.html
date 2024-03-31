@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Catalog</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
-    <script>
-        function display(){
-            document.getElementById('output').innerText = document.getElementById('customRange3').value*2*450000;
-        }
-    </script>
+    <link href="../cat-style.css" rel="stylesheet">
+    <!-- <script src="details.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,35 +40,43 @@
     <div class="row">
         <!-- Example car card with additional information -->
         <div class="col-lg-4">
-            <div class="card">
-                <img src="../images/fordGt.avif" class="card-img-top" alt="Car Image">
-                <div class="card-body">
-                    <h5 class="card-title">Ford-Gt</h5>
-                    <p class="card-text" style="font-style: italic;">450,000 pkr</p>
-
-                    <p class="card-info">Mileage: 90,000 km<br>Year: 2023<br>Location: Peshawar</p>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Vendor Info</h5>
+                            <p class="card-text">Vendor Name: John Doe</p>
+                            <p class="card-text">Contact: vendor@example.com</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <img src="../../../src/images/fordGt.avif" class="card-img-top" alt="Car Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Ford-Gt</h5>
+                            <p class="card-text" style="font-style: italic;">450,000 pkr</p>
+        
+                            <p class="card-info">Mileage: 90,000 km<br>Year: 2023<br>Location: Peshawar</p>
+                        </div>
+                    </div>
+                </div>
         </div>
         <div class="col-lg-8">
             <div class="card">
-                <p> Hourly rate of car: 450,000 PKR </p><br/>
-                <label for="customRange3" class="form-label">Select number of hours</label>
-                <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3" onchange="display()">
-                <div class="container text-center slider">
-                    <div class="col">0</div>
-                    <div class="col">1</div>
-                    <div class="col">2</div>
-                    <div class="col">3</div>
-                    <div class="col">4</div>
-                    <div class="col">5</div>
-                    <div class="col">6</div>
-                    <div class="col">7</div>
-                    <div class="col">8</div>
-                    <div class="col">9</div>
-                    <div class="col">10</div>
+                <div class="form-group">
+                    <label for="datetimestart" style="padding: 10px;">Select start date and time</label>
+                    <input type="datetime-local" class="form-control" id="datetimestart" style="padding: 10px;"> <!-- onchange="calculateTimeDifference(); unavailable();"> -->
                 </div>
-                <p>PKR </p><p id="output">0</p><br/>
+                
+                <div class="form-group">
+                    <label for="datetimeend" style="padding: 10px;">Select end date and time</label>
+                    <input type="datetime-local" class="form-control" id="datetimeend" style="padding: 10px;"> <!--  onchange="calculateTimeDifference()"> -->
+                </div>
+
+                <p style="padding: 2px 10px;"> Hourly rate of car: 450,000 PKR </p><br/>
+                
+                <p style="padding: 0px 10px;">Hours </p><p id="output1" style="padding: 0px 10px;">0</p><br/>
+                <p style="padding: 0px 10px;">PKR </p><p id="output2" style="padding: 0px 10px;">0</p><br/>
                 <button type="button" class="btn btn-primary">Pay</button>
 
             </div>
