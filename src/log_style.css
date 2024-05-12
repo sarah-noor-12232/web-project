@@ -1,0 +1,403 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+label.mr-3 {
+    color: #111; /* Change this to your desired font color */
+}
+
+label {
+    color: #111; /* Change this to your desired font color */
+}
+
+.wrapper {
+    --input-focus: #2d8cf0;
+    --font-color: #111;
+    --font-color-sub: #7e7e7e;
+    --bg-color: #111;
+    --bg-color-alt: #7e7e7e;
+    --main-color: #fefefe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #25292e; /* Dark grey background color */
+    /* justify-content: flex-start; Adjusted alignment */
+    padding-top: -10px;
+    background: repeating-linear-gradient( -45deg, #25292e, #0f0f0f 10px, #25292e 10px, #0f0f0f 20px ) #25292e;
+    background-blend-mode: screen;
+}
+/* switch card */
+.switch {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Adjusted alignment */
+    gap: 30px;
+    position: relative;
+    margin-left: 20px; /* Adjusted margin */
+    --input-focus: #2d8cf0;
+    --bg-color: #fff;
+    --bg-color-alt: #666;
+    --main-color: #323232;
+    --input-out-of-focus: #ccc;
+    width: 70px;
+    height: 36px;
+    transform: translateX(calc(50% - 10px));
+}
+
+.toggle {
+    opacity: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: -260px;
+    left: -60px;
+    right: 15px;
+    bottom: 260px;
+    background-color: var(--input-out-of-focus);
+    transition: 0.3s;
+}
+
+    .slider:before {
+        content: "Sign Up";
+        box-sizing: border-box;
+        height: 30px;
+        width: 80px;
+        position: absolute;
+        left: 0px;
+        bottom: 1px;
+        border: 2px solid var(--main-color);
+        border-radius: 100px;
+        background-color: var(--bg-color);
+        color: var(--main-color);
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 25px;
+        transition: 0.3s;
+    }
+
+.toggle:checked + .slider {
+    background-color: var(--input-focus);
+    transform: translateX(-32px);
+}
+
+    .toggle:checked + .slider:before {
+        content: "Log In";
+        transform: translateX(32px);
+    }
+
+.card-side::before {
+    position: absolute;
+    /* content: 'Log In'; */
+    left: 20px;
+    top: -110px;
+    width: 100px;
+    text-decoration: underline;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.card-side::after {
+    position: absolute;
+    /* content: 'Sign up'; */
+    right: -25px;
+    top: -110px;
+    width: 100px;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+/* Other CSS styles... */
+
+
+
+/* card */
+.flip-card__inner {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    margin: 0 auto; /* Center horizontally */
+    bottom: 800%; /* Move down by half of its height */
+    right: 250%;
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    z-index: 1;
+}
+
+
+.toggle:checked ~ .flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+.toggle:checked ~ .flip-card__front {
+    box-shadow: var(--main-color);
+}
+
+.flip-card__front, .flip-card__back {
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: var(--bg-color);
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--input-focus);
+    color: #000000; /* White text color */
+}
+
+.flip-card__back {
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.flip-card__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title01 {
+  color: #000000;
+    margin: 20px 0;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    
+}
+
+.card .title {
+  color: #000000; /* Overriding any other styles that might affect the title in cards */
+}
+
+.flip-card__input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+    .flip-card__input::placeholder {
+        color: var(--font-color-sub);
+        opacity: 0.8;
+    }
+
+    .flip-card__input:focus {
+        border: 2px solid var(--input-focus);
+    }
+
+.flip-card__btn:active, .button-confirm:active {
+    box-shadow: 0px 0px var(--font-color-sub);
+    transform: translate(3px, 3px);
+}
+
+.flip-card__btn {
+    margin: 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+
+.flip-card__btn2:active, .button-confirm:active {
+  box-shadow: 0px 0px var(--font-color-sub);
+  transform: translate(3px, 3px);
+  color:#000000;
+}
+
+.flip-card__btn2 {
+  margin: 20px 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 13px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  margin-right:5px;
+}
+
+
+
+.footer {
+    background-color: #25292e;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer h4 {
+    color: #2d8cf0;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-left: 180px;
+  }
+  
+  .up {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .down {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+  }
+  
+  .card1 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 90px 5px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+  }
+  
+  .instagram {
+    margin-top: 1.5em;
+    margin-left: 1.2em;
+    fill: #cc39a4;
+  }
+  
+  .card2 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 90px 5px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+  }
+  
+  .twitter {
+    margin-top: 1.5em;
+    margin-left: -.9em;
+    fill: #03A9F4;
+  }
+  
+  .card3 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 90px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+  }
+  
+  .google {
+    margin-top: -.6em;
+    margin-left: 1.2em;
+    fill: #f14336;
+  }
+  
+  .card4 {
+    width: 90px;
+    height: 90px;
+    outline: none;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 90px 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: .2s ease-in-out;
+  }
+  
+  .whatsapp {
+    margin-top: -.9em;
+    margin-left: -1.2em;
+    fill: #00ff00;
+  }
+  
+  .card1:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #cc39a4;
+  }
+  
+  .card1:hover .instagram {
+    fill: white;
+  }
+  
+  .card2:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #03A9F4;
+  }
+  
+  .card2:hover .twitter {
+    fill: white;
+  }
+  
+  .card3:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #f14336;
+  }
+  
+  .card3:hover .google {
+    fill: white;
+  }
+  
+  .card4:hover {
+    cursor: pointer;
+    scale: 1.1;
+    background-color: #00ff00;
+  }
+  
+  .card4:hover .whatsapp {
+    fill: white;
+  }
+
+
+  
